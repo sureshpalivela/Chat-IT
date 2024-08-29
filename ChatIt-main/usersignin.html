@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+        }
+        .greet{
+            animation:slide 4s ease-in infinite;
+            font-size: 40px;
+            margin-top: 50px;
+            color:yellowgreen;
+        }
+        @keyframes slide{
+            0% {
+                
+                transform: translatey(0px);
+              }
+              50% {
+                
+                transform: translatey(-50px);
+              }
+              100% {
+                
+                transform: translatey(0px);
+              }
+        }
+        .cred{
+            margin-left: 175px;
+            font-size: 20px;
+            margin-top: 150px;
+            line-height: 3;
+        }
+        input[type="text"]{
+            border: none;
+            height: 4vh;
+            width: 45vh;
+            border-bottom: 3px solid black; 
+        }
+        input[type="submit"]{
+            border: none;
+            height: 5vh;
+            width: 45vh; 
+            color:yellow;
+            font-weight: 900;
+            background-color: blue;
+            border-radius: 8px;
+            font-size:20px;
+        }
+        img{
+            height: 500px;
+            width: 300px;
+            margin-left: 225px;
+        }
+    </style>
+</head>
+<body>
+    <div class="greet">
+        <h1>Hey..!</h1>
+        <h2>Welcome to VC community</h2>
+        <img src="girl-doing-video-chat-with-friends-3032733-2543531.webp" alt="lg">
+    </div>
+    <div class="cred">
+    <form action="/signupsubmit" class="form" method="GET">
+        
+        <input type="text" name="uname" id="username" placeholder="username"><br>
+        <input type="text" name="email" id="email" placeholder="email"><br>
+        <input type="text" name="password" id="password" placeholder="password"><br>
+        <input type="submit" value="signin" id="submit" name="submit">
+        
+        <p>sign up if not visited earlier else click here:<a href="#">Login</a></p>
+    </form>
+    </div>
+    <script>
+        const n = document.getElementById('username');
+        n.addEventListener('textInput',verifyname)
+        function verifyname(){
+            if(n.value.length<=9){
+                n.style.borderBottom = "6px solid red"
+            }
+            else{
+                n.style.borderBottom = "6px solid green"
+            }
+            return true
+        }
+        var e = document.getElementById('email')
+        e.addEventListener('textInput',verifyemail)
+        function verifyemail(){
+            if(e.value.length<10){
+                e.style.borderBottom = "6px solid red"
+            }
+            else{
+                e.style.borderBottom = "6px solid green"
+            }
+            return true
+        }
+        var p = document.getElementById('password')
+        p.addEventListener('textInput',verifypassword)
+        function verifypassword(){
+            if(p.value.length<6){
+                p.style.borderBottom = "6px solid red"
+            }
+            else{
+                p.style.borderBottom = "6px solid green"
+            }
+            return true
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            /* background-color:cornflowerblue; */
+            background-repeat: no-repeat;
+        }
+        .greet{
+            font-size: 35px;
+            color:red;
+            margin-left: 10vh;
+            animation:slide 4s ease-in-out infinite;
+            margin-top: 10vh;
+        }
+        @keyframes slide{
+            0% {
+                
+                transform: translatey(0px);
+              }
+              50% {
+                
+                transform: translatey(-50px);
+              }
+              100% {
+                
+                transform: translatey(0px);
+              }
+        }
+        .con{
+            line-height: 4;
+            margin-left: 25vh;
+            margin-top: 20vh;
+        }
+        input[type=text]{
+            border:none;
+            height: 5vh;
+            width: 45vh;
+            border-bottom: 3px solid black;
+            /* background-color: cornflowerblue; */
+            color:blue;
+            font-size: 20px;
+        }
+        input[type=submit]{
+            width: 45vh;
+            height: 5vh;
+            background-color: skyblue;
+            font-weight:700 ;
+            color: red;
+            font-size: 20px;
+        }
+        #gs{
+            margin-left: 10vh;
+        }
+        #pp{
+            height: 40vh;
+            width: 40vh;
+        }
+        .login{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="greet">
+        <h1>Hurry Up..!</h1>
+        <h2>It's Time to make Friends.</h2>
+        <img src="womens-freelance-arabian-girl-hijab-with-laptop-sitting-bench-park-concept-illustration-working-outdoors-studying-communication-healthy-lifestyle-illustration-flat-style_189033-49.webp" id="gs" alt="logo">
+    </div>
+    <div class="con">
+        <form action="/loginsubmit" class="form" method="GET">
+            <input type="text" name="username" id="username" placeholder="username"><br>
+            <input type="text" name="password" id="password" placeholder="password"><br>
+            <input type="submit" value="login" id="login" class="login">
+        </form>
+        <img src="image.png" id="pp" alt="pp">
+    </div>
+    <script>
+        var un = document.getElementById('username')
+        un.addEventListener('textInput',verifyEmail);
+        function verifyEmail(){
+            if(un.value.length<8){
+                un.style.borderBottom = "6px solid red";
+            }
+            else{
+                un.style.borderBottom = "6px solid green";
+            }
+            return true
+        }
+        p = document.getElementById('password')
+        p.addEventListener('textInput',verifypassword)
+        function verifypassword(){
+            if(p.value.length<6){
+                p.style.borderBottom = "6px solid red"
+            }
+            else{
+                p.style.borderBottom = "6px solid green"
+            }
+            return true
+        }
+    </script>
+</body>
+</html>

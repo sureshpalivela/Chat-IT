@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+        }
+        .logo{
+            font-size: 40px;
+            color: skyblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            animation: float 6s ease-in-out infinite;
+
+            padding-top: 30px;
+        }
+        @keyframes float{
+            0% {
+                
+                transform: translatey(0px);
+              }
+              50% {
+                
+                transform: translatey(-50px);
+              }
+              100% {
+                
+                transform: translatey(0px);
+              }
+        }
+        img{
+            height: 500px;
+        }
+        .action{
+            margin-top: 45vh;
+            
+            line-height: 5;
+        }
+        input[type=button]{
+            width: 40vh;
+            height: 8vh;
+            margin-right: 300px;
+            background-color: blue;
+            color: yellow;
+            font-weight: 900;
+            font-size: 24px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+   <div class="logo">
+    <h1>Welcome to mass chat</h1>
+    <img src="chat-01.png" alt="chat">
+   </div>
+   <div class="action">
+    <input type="button" value="signup" id="signup"><br><input type="button" value="login" id="login">
+   </div>
+   <script>
+
+        document.getElementById('signup').addEventListener('click', function() {
+        // Assuming you want to redirect to a page named "signup.html"
+        window.location.href = 'usersignin.html';
+        });
+
+        document.getElementById('login').addEventListener('click', function() {
+        // Assuming you want to redirect to a page named "login.html"
+        window.location.href = 'userLogin.html';
+        });
+   </script>
+</body>
+</html>
